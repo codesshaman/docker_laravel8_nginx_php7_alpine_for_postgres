@@ -8,8 +8,12 @@ Clone: git clone https://github.com/codesshaman/minimal_docker_laravel_nginx_php
 GO TO FOLDER:
 cd minimal_docker_laravel_nginx_php
 
-UNZIP:
-unzip laravel.zip
+CREATE LARAVEL:
+composer create-project laravel/laravel laravel
+
+COMPOSER UPDATE:
+cd laravel
+composer-update
 
 BUILD (first start):
 docker-compose up -d --build

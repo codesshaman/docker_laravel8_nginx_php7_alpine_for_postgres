@@ -4,23 +4,23 @@ services:
   nginx:
     image: nginx:stable-alpine
     volumes:
-      - ./laravel:/var/www
+      - ./laravel:/var/www/
       - ./nginx/conf.d:/etc/nginx/conf.d/
     ports:
-      - "80:80"
+      - "8999:80"
     tty:  true
     restart: unless-stopped
-    container_name: nginx_laravel
+    container_name: nginx_lar8app
     depends_on:
-      - app
+      - lar8app
 
-  app:
+  lar8app:
     build:
       context: .
       dockerfile: app/Dockerfile
     tty:  true
-    user: 1001:1001
+    user: 1000:1000
     restart: unless-stopped
     volumes:
       - ./laravel:/var/www
-    container_name: app
+    container_name: lar8app
